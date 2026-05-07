@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+margin: 0;
+box-sizing: border-box;     
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+header{
+    background-color: #eba65d;
+    color: #033d35;
+    padding: 20px;
+    text-align: center;
+}
+
+.zapatillas{
+    color: #000679;
+    text-align: center;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #dcc474;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(51, 32, 162, 0.1);
+line-height: 3.0;
+}
+
+.descripcion{
+    text-align: center;
+    font-size: 5pxx;
+    line-height: 1.2;
+    color: #000679;
+    margin-bottom: 15x;
+    border-bottom: 5px solid #b39a2f;
+    border-radius: 5px;
+    padding-bottom: 5%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+     letter-spacing: 0.5px;
+}
+
+img{
+    max-width: 30%;
+    height: auto;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 0 auto;
+}
+.img-box{
+        max-width: 100%;
+        height: auto;   
+    padding: 0.2%;
+    border-radius: 10px;
+    background:linear-gradient(45deg, #d78808, #56c9c7);
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+   
+}
+
+.precio{
+    background-color: #d78808;
+    text-align: center;
+    height: 50px;
+    padding: 10px;
+    margin: 5px auto;
+    max-width: 100%;
+    font-size: 90%;
+    color: #5948c9;
+    margin-bottom: 20px;
+    display: block;
+    border-radius: 4px;
+} 
+
+
+.btn{
+    text-align: center;
+    display: center;
+    padding: 10px 20px;
+    background:linear-gradient(45deg, #1b078a, #1a89d8);
+    color: #fff;
+    text-decoration:none ;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+    background:linear-gradient(45deg, hsl(21, 75%, 58%), #ef6f07);
+}
