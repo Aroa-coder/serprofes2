@@ -41,6 +41,15 @@
         margin-bottom: 20px;
 }
 
+.historial ul{
+    margin-top: 10px;
+    padding-left: 20px;
+
+}
+
+.historial li {
+    margin-bottom: 8px;
+}
 
 /*AREA DE CHAT (Zona Central)*/
 .chat-area{
@@ -55,12 +64,44 @@ border-bottom: 1px solid #4d4d4f;
 color: #ececf1;
 text-align: center;
  }
+
+ .controles-filtros {
+text-align: center;
+padding: 10px;
+background-color: #202123;
+border-bottom: 1px solid #4d4d4f;
+}
+
+.controles-filtros button:hover {
+    background-color: #565869;
+    
+}
+
+.controles-filtros button {
+background-color: #444654;
+color: white;
+border: 1px solid #565869;
+padding: 8px 15px;
+margin: 0 5px;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
+}
+/* Modificamos en mensajes-container
+-mensajes uno debajo del otro   
+-scroll vertical 
+-simulacion real de chat */
+
+
 .mensajes-container{
 flex-grow: 1; /*Mensajes ocupan el centro*/
 padding: 40px;
 display: flex;
-justify-content: center; /*Centra horizontalmente*/
-align-items: center;/*Centra el contenido verticalmente*/
+/* se agrega el flex-direction por ser un chat column */
+flex-direction: column;
+justify-content: flex-start; 
+align-items: stretch;
+overflow-y: auto;
 }
 
 .mensaje-ia{
@@ -140,7 +181,8 @@ padding: 5px;
     .chat-header h3{
 font-size: 1.1rem; /*Achicamos el título superior*/
  }
- .mensaje-ia{
+ .msg-usuario, msg-ia {
+    max-width: 90%;
     font-size: 0.95rem;
     /*Ajustamos el texto de la ia para que no se vea gigante*/
  }
