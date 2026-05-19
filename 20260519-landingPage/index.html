@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Cursos Web Gratis con Certificado - Aprende Desarrollo Web</title>
+    <meta name="description" content="Descubre las mejores plataformas para aprender desarrollo web (HTML, CSS, JavaScript, React) completamente gratis y obtén tu certificado oficial sin costo.">
+    <meta name="keywords" content="cursos gratis, desarrollo web, programacion, certificados gratis, freecodecamp, the odin project, html, css, javascript">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cursoswebgratis.com/">
+    <meta property="og:title" content="Aprende Desarrollo Web Gratis y Obtén Certificados Oficiales">
+    <meta property="og:description" content="Descubre las mejores plataformas para estudiar HTML, CSS, JavaScript y más, completamente gratis.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            text: '#f8fafc',
+                            muted: '#94a3b8',
+                            border: '#334155'
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for base styles and utilities -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .dark .glass {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Hide scrollbar for clean look in table container */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Animation delay utilities */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-dark-bg dark:text-dark-text transition-colors duration-300 relative overflow-x-hidden">
+
+    <!-- Decorative background blobs -->
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob dark:bg-purple-900 dark:mix-blend-screen pointer-events-none z-0"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-2000 dark:bg-blue-900 dark:mix-blend-screen pointer-events-none z-0"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-4000 dark:bg-pink-900 dark:mix-blend-screen pointer-events-none z-0"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="ph-fill ph-code text-primary-600 text-3xl dark:text-primary-500"></i>
+                    <span class="font-bold text-xl tracking-tight hidden sm:block">CursosWeb<span class="text-primary-600 dark:text-primary-500">Gratis</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#plataformas" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Plataformas</a>
+                    <a href="#tecnologias" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Tecnologías</a>
+                    <a href="#faq" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">FAQ</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" aria-label="Cambiar tema" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                        <i class="ph ph-moon text-xl dark:hidden"></i>
+                        <i class="ph ph-sun text-xl hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <a href="#plataformas" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-xl text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 shadow-lg shadow-primary-500/30 transition-all hover:scale-105">
+                        Empezar ahora
+                    </a>
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-800" aria-label="Abrir menú" onclick="toggleMobileMenu()">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t dark:border-dark-border">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#plataformas" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800" onclick="toggleMobileMenu()">Plataformas</a>
+                <a href="#tecnologias" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800" onclick="toggleMobileMenu()">Tecnologías</a>
+                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800" onclick="toggleMobileMenu()">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm font-medium mb-6 border border-blue-200 dark:border-blue-800/50">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                    </span>
+                    Actualizado para 2026
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8">
+                    Aprende Desarrollo Web <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400">Gratis</span> y Obtén <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-400 dark:to-pink-400">Certificados</span> Oficiales
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-slate-600 dark:text-dark-muted mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Descubre las mejores plataformas para estudiar HTML, CSS, JavaScript, React y más, completamente gratis y sin letras pequeñas.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#plataformas" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-2xl text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 shadow-xl shadow-primary-500/30 transition-all hover:-translate-y-1 group">
+                        Explorar Cursos
+                        <i class="ph ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <button onclick="openPdfModal('freecodecamp')" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-2xl text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 dark:text-white dark:bg-dark-card dark:hover:bg-slate-800 dark:border-dark-border shadow-sm transition-all hover:-translate-y-1">
+                        <i class="ph ph-file-pdf text-red-500 text-xl mr-2"></i>
+                        Ver Certificado (PDF)
+                    </button>
+                </div>
+
+                <!-- Stats summary -->
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-slate-200 dark:border-dark-border pt-8 opacity-0 animate-fade-in-up delay-200" style="animation-fill-mode: forwards;">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white" id="stat-platforms">0</div>
+                        <div class="text-sm text-slate-500 dark:text-dark-muted mt-1">Plataformas</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white">100%</div>
+                        <div class="text-sm text-slate-500 dark:text-dark-muted mt-1">Gratuitos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white" id="stat-techs">0</div>
+                        <div class="text-sm text-slate-500 dark:text-dark-muted mt-1">Tecnologías</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white">∞</div>
+                        <div class="text-sm text-slate-500 dark:text-dark-muted mt-1">Oportunidades</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN BENEFICIOS -->
+    <section id="beneficios" class="py-20 bg-white dark:bg-slate-900 relative z-10 border-y border-slate-200 dark:border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Por qué estudiar en estas plataformas?</h2>
+                <p class="text-lg text-slate-600 dark:text-dark-muted max-w-2xl mx-auto">Educación de calidad mundial, accesible para todos, en cualquier momento. Haz clic para explorar detalles adicionales.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 dark:bg-dark-card dark:border-dark-border dark:hover:border-blue-800 transition-all hover:-translate-y-1 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-certificate text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Certificados gratuitos</h3>
+                        <p class="text-slate-600 dark:text-dark-muted">Obtén credenciales reales que puedes añadir a tu LinkedIn y CV sin pagar absolutamente nada.</p>
+                        
+                        <!-- Collapsible details block -->
+                        <div class="benefit-details max-h-0 opacity-0 overflow-hidden transition-all duration-300 text-sm text-slate-500 dark:text-dark-muted border-t border-slate-200 dark:border-dark-border mt-0">
+                            <div class="pt-4 space-y-2">
+                                <p>Al completar todos los proyectos y evaluaciones obligatorias de plataformas como freeCodeCamp, se genera un certificado digital con un ID de verificación único.</p>
+                                <p>Puedes incluir este enlace público en tu CV o agregarlo directamente a la sección de "Licencias y certificaciones" de tu perfil de LinkedIn para que cualquier reclutador valide tus conocimientos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="toggle-benefit-btn mt-6 inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 focus:outline-none transition-colors">
+                        <span>Saber más</span>
+                        <i class="ph ph-caret-down ml-1.5 transition-transform duration-300"></i>
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-purple-200 dark:bg-dark-card dark:border-dark-border dark:hover:border-purple-800 transition-all hover:-translate-y-1 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center mb-6 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-laptop text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Cursos 100% online</h3>
+                        <p class="text-slate-600 dark:text-dark-muted">Estudia desde cualquier lugar del mundo. Solo necesitas una computadora y conexión a internet.</p>
+                        
+                        <!-- Collapsible details block -->
+                        <div class="benefit-details max-h-0 opacity-0 overflow-hidden transition-all duration-300 text-sm text-slate-500 dark:text-dark-muted border-t border-slate-200 dark:border-dark-border mt-0">
+                            <div class="pt-4 space-y-2">
+                                <p>No requieres trasladarte ni cumplir con matrículas geográficas. Todo el contenido educativo, compiladores, ejercicios de código e interacciones de foro están construidos directamente sobre la web.</p>
+                                <p>Además, muchas de estas plataformas son compatibles con navegadores móviles, de modo que puedes repasar conceptos teóricos de camino al trabajo o universidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="toggle-benefit-btn mt-6 inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 focus:outline-none transition-colors">
+                        <span>Saber más</span>
+                        <i class="ph ph-caret-down ml-1.5 transition-transform duration-300"></i>
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-pink-200 dark:bg-dark-card dark:border-dark-border dark:hover:border-pink-800 transition-all hover:-translate-y-1 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-pink-100 dark:bg-pink-900/50 flex items-center justify-center mb-6 text-pink-600 dark:text-pink-400 group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-clock text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Aprende a tu ritmo</h3>
+                        <p class="text-slate-600 dark:text-dark-muted">Sin horarios fijos ni fechas límite estrictas. Avanza tan rápido o lento como tu vida te lo permita.</p>
+                        
+                        <!-- Collapsible details block -->
+                        <div class="benefit-details max-h-0 opacity-0 overflow-hidden transition-all duration-300 text-sm text-slate-500 dark:text-dark-muted border-t border-slate-200 dark:border-dark-border mt-0">
+                            <div class="pt-4 space-y-2">
+                                <p>Tú controlas el calendario de estudio. Ideal para combinar con el trabajo, la escuela u otras actividades personales sin sufrir la presión de entregas estresantes.</p>
+                                <p>Si necesitas pausar una semana para repasar un tema complejo, puedes hacerlo y retomar el curso exactamente donde te habías quedado, sin penalizaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="toggle-benefit-btn mt-6 inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 focus:outline-none transition-colors">
+                        <span>Saber más</span>
+                        <i class="ph ph-caret-down ml-1.5 transition-transform duration-300"></i>
+                    </button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-green-200 dark:bg-dark-card dark:border-dark-border dark:hover:border-green-800 transition-all hover:-translate-y-1 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-green-100 dark:bg-green-900/50 flex items-center justify-center mb-6 text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ph-code-block text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Tecnologías modernas</h3>
+                        <p class="text-slate-600 dark:text-dark-muted">Aprende los lenguajes y frameworks que las empresas tecnológicas están buscando activamente hoy.</p>
+                        
+                        <!-- Collapsible details block -->
+                        <div class="benefit-details max-h-0 opacity-0 overflow-hidden transition-all duration-300 text-sm text-slate-500 dark:text-dark-muted border-t border-slate-200 dark:border-dark-border mt-0">
+                            <div class="pt-4 space-y-2">
+                                <p>El temario no está desactualizado. Conocerás de primera mano lenguajes como JavaScript (ES6+), frameworks líderes en la industria como React, entornos de backend como Node.js y bases de datos relacionales o NoSQL.</p>
+                                <p>También se incluyen metodologías ágiles de control de versiones con Git y GitHub, que son herramientas clave solicitadas en las pruebas técnicas de contratación laboral.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="toggle-benefit-btn mt-6 inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 focus:outline-none transition-colors">
+                        <span>Saber más</span>
+                        <i class="ph ph-caret-down ml-1.5 transition-transform duration-300"></i>
+                    </button>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-orange-200 dark:bg-dark-card dark:border-dark-border dark:hover:border-orange-800 transition-all hover:-translate-y-1 hover:shadow-xl group lg:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+                            <div class="w-14 h-14 shrink-0 rounded-2xl bg-orange-100 dark:bg-orange-900/50 flex items-center justify-center text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform">
+                                <i class="ph-fill ph-star text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-3">Plataformas reconocidas globalmente</h3>
+                                <p class="text-slate-600 dark:text-dark-muted">Los cursos están diseñados y respaldados por comunidades de desarrolladores masivas y, en algunos casos, por instituciones de prestigio mundial como la Universidad de Harvard.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Collapsible details block -->
+                        <div class="benefit-details max-h-0 opacity-0 overflow-hidden transition-all duration-300 text-sm text-slate-500 dark:text-dark-muted border-t border-slate-200 dark:border-dark-border mt-0">
+                            <div class="pt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <p>Los planes de estudio de freeCodeCamp y The Odin Project se revisan constantemente de forma colectiva en GitHub por miles de desarrolladores activos del sector. Esto asegura que lo aprendido sea exactamente lo necesario para el empleo real.</p>
+                                <p>Por otro lado, CS50 de Harvard es considerado el mejor curso de ciencias de la computación del mundo entero, impartido por el profesor David J. Malan, con un rigor académico excepcional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center sm:justify-start">
+                        <button class="toggle-benefit-btn mt-6 inline-flex items-center text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 focus:outline-none transition-colors">
+                            <span>Saber más</span>
+                            <i class="ph ph-caret-down ml-1.5 transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABLA PRINCIPAL DE PLATAFORMAS -->
+    <section id="plataformas" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Directorio de Plataformas</h2>
+                    <p class="text-lg text-slate-600 dark:text-dark-muted">Las mejores opciones evaluadas y verificadas.</p>
+                </div>
+                
+                <!-- Buscador simple -->
+                <div class="w-full md:w-auto relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar plataforma o tecnología..." class="w-full md:w-80 pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:bg-dark-card dark:border-dark-border dark:focus:ring-primary-900 dark:text-white outline-none transition-all shadow-sm">
+                </div>
+            </div>
+
+            <!-- Tabla Container -->
+            <div class="bg-white dark:bg-dark-card rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-dark-border overflow-hidden">
+                <div class="overflow-x-auto no-scrollbar">
+                    <table class="w-full text-left border-collapse" id="platformsTable">
+                        <thead>
+                            <tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-dark-border">
+                                <th class="p-6 font-semibold text-slate-600 dark:text-slate-300">Plataforma</th>
+                                <th class="p-6 font-semibold text-slate-600 dark:text-slate-300 whitespace-nowrap">Certificado Gratis</th>
+                                <th class="p-6 font-semibold text-slate-600 dark:text-slate-300">Tecnologías Principales</th>
+                                <th class="p-6 font-semibold text-slate-600 dark:text-slate-300 text-right">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 dark:divide-dark-border">
+                            <!-- Filas generadas por JS para facilitar filtrado, pero las pongo aquí en HTML para SEO -->
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group platform-row">
+                                <td class="p-6">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                            <i class="ph-fill ph-fire"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-lg text-slate-900 dark:text-white platform-name">freeCodeCamp</div>
+                                            <div class="text-sm text-slate-500 dark:text-dark-muted">Comunidad masiva</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-6">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                        <i class="ph-fill ph-check-circle"></i> Sí, verificados
+                                    </span>
+                                </td>
+                                <td class="p-6">
+                                    <div class="flex flex-wrap gap-2 tech-tags">
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-dark-border">HTML/CSS</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800/50">JavaScript</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50">React</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-dark-border">APIs</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-right">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <button onclick="openPdfModal('freecodecamp')" class="inline-flex items-center justify-center p-2 rounded-lg text-red-600 bg-red-50 hover:bg-red-100 dark:text-red-400 dark:bg-red-950/20 dark:hover:bg-red-900/30 transition-colors" title="Ver Certificado de Ejemplo (PDF)">
+                                            <i class="ph ph-file-pdf text-xl"></i>
+                                        </button>
+                                        <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium text-primary-600 bg-primary-50 hover:bg-primary-100 dark:text-primary-400 dark:bg-primary-900/20 dark:hover:bg-primary-900/40 transition-colors whitespace-nowrap">
+                                            Visitar Web <i class="ph ph-arrow-up-right ml-1"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group platform-row">
+                                <td class="p-6">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-xl bg-[#cc9c00] text-white flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                            <i class="ph-fill ph-sword"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-lg text-slate-900 dark:text-white platform-name">The Odin Project</div>
+                                            <div class="text-sm text-slate-500 dark:text-dark-muted">Curriculum completo</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-6">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                        <i class="ph-fill ph-check-circle"></i> Sí
+                                    </span>
+                                </td>
+                                <td class="p-6">
+                                    <div class="flex flex-wrap gap-2 tech-tags">
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-dark-border">HTML/CSS</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800/50">JavaScript</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800/50">Node.js</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800/50">Ruby</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-right">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <button onclick="openPdfModal('theodinproject')" class="inline-flex items-center justify-center p-2 rounded-lg text-red-600 bg-red-50 hover:bg-red-100 dark:text-red-400 dark:bg-red-950/20 dark:hover:bg-red-900/30 transition-colors" title="Ver Certificado de Ejemplo (PDF)">
+                                            <i class="ph ph-file-pdf text-xl"></i>
+                                        </button>
+                                        <a href="https://www.theodinproject.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium text-primary-600 bg-primary-50 hover:bg-primary-100 dark:text-primary-400 dark:bg-primary-900/20 dark:hover:bg-primary-900/40 transition-colors whitespace-nowrap">
+                                            Visitar Web <i class="ph ph-arrow-up-right ml-1"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group platform-row">
+                                <td class="p-6">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-xl bg-[#a41034] text-white flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                            H
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-lg text-slate-900 dark:text-white platform-name">CS50 Harvard</div>
+                                            <div class="text-sm text-slate-500 dark:text-dark-muted">Nivel universitario</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-6">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                        <i class="ph-fill ph-check-circle"></i> Sí (edX)
+                                    </span>
+                                </td>
+                                <td class="p-6">
+                                    <div class="flex flex-wrap gap-2 tech-tags">
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400 border border-purple-200 dark:border-purple-800/50">Comp. Science</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-dark-border">Web Dev</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50">C / Python</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-right">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <button onclick="openPdfModal('cs50')" class="inline-flex items-center justify-center p-2 rounded-lg text-red-600 bg-red-50 hover:bg-red-100 dark:text-red-400 dark:bg-red-950/20 dark:hover:bg-red-900/30 transition-colors" title="Ver Certificado de Ejemplo (PDF)">
+                                            <i class="ph ph-file-pdf text-xl"></i>
+                                        </button>
+                                        <a href="https://cs50.harvard.edu/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium text-primary-600 bg-primary-50 hover:bg-primary-100 dark:text-primary-400 dark:bg-primary-900/20 dark:hover:bg-primary-900/40 transition-colors whitespace-nowrap">
+                                            Visitar Web <i class="ph ph-arrow-up-right ml-1"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group platform-row">
+                                <td class="p-6">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-xl bg-[#4a90e2] text-white flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                            S
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-lg text-slate-900 dark:text-white platform-name">SoloLearn</div>
+                                            <div class="text-sm text-slate-500 dark:text-dark-muted">Ideal para móvil</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-6">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                        <i class="ph-fill ph-check-circle"></i> Sí
+                                    </span>
+                                </td>
+                                <td class="p-6">
+                                    <div class="flex flex-wrap gap-2 tech-tags">
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-dark-border">HTML/CSS</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800/50">JavaScript</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50">Python</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-right">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <button onclick="openPdfModal('sololearn')" class="inline-flex items-center justify-center p-2 rounded-lg text-red-600 bg-red-50 hover:bg-red-100 dark:text-red-400 dark:bg-red-950/20 dark:hover:bg-red-900/30 transition-colors" title="Ver Certificado de Ejemplo (PDF)">
+                                            <i class="ph ph-file-pdf text-xl"></i>
+                                        </button>
+                                        <a href="https://www.sololearn.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium text-primary-600 bg-primary-50 hover:bg-primary-100 dark:text-primary-400 dark:bg-primary-900/20 dark:hover:bg-primary-900/40 transition-colors whitespace-nowrap">
+                                            Visitar Web <i class="ph ph-arrow-up-right ml-1"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors group platform-row">
+                                <td class="p-6">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-xl bg-[#2b2b2b] text-white flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                            <i class="ph-fill ph-rocket"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-lg text-slate-900 dark:text-white platform-name">OpenBootcamp</div>
+                                            <div class="text-sm text-slate-500 dark:text-dark-muted">Bootcamp gratuito</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-6">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                        <i class="ph-fill ph-check-circle"></i> Sí
+                                    </span>
+                                </td>
+                                <td class="p-6">
+                                    <div class="flex flex-wrap gap-2 tech-tags">
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-dark-border">Full Stack</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800/50">JavaScript</span>
+                                        <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 border border-blue-200 dark:border-blue-800/50">React / Angular</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-right">
+                                    <div class="flex items-center justify-end gap-2">
+                                        <button onclick="openPdfModal('openbootcamp')" class="inline-flex items-center justify-center p-2 rounded-lg text-red-600 bg-red-50 hover:bg-red-100 dark:text-red-400 dark:bg-red-950/20 dark:hover:bg-red-900/30 transition-colors" title="Ver Certificado de Ejemplo (PDF)">
+                                            <i class="ph ph-file-pdf text-xl"></i>
+                                        </button>
+                                        <a href="https://open-bootcamp.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium text-primary-600 bg-primary-50 hover:bg-primary-100 dark:text-primary-400 dark:bg-primary-900/20 dark:hover:bg-primary-900/40 transition-colors whitespace-nowrap">
+                                            Visitar Web <i class="ph ph-arrow-up-right ml-1"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Mensaje si no hay resultados en la búsqueda -->
+                    <div id="noResultsMsg" class="hidden text-center py-8 text-slate-500 dark:text-dark-muted">
+                        No se encontraron plataformas o tecnologías que coincidan con tu búsqueda.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN “TECNOLOGÍAS MÁS DEMANDADAS” -->
+    <section id="tecnologias" class="py-20 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-dark-border relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Tecnologías Más Demandadas</h2>
+                <p class="text-slate-600 dark:text-dark-muted">Lo que aprenderás en estas plataformas es exactamente lo que el mercado laboral busca.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <!-- Tech Badges -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 w-24 md:w-32">
+                    <i class="ph-fill ph-file-html text-4xl text-[#E34F26] mb-2"></i>
+                    <span class="font-medium text-sm">HTML5</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 w-24 md:w-32">
+                    <i class="ph-fill ph-file-css text-4xl text-[#1572B6] mb-2"></i>
+                    <span class="font-medium text-sm">CSS3</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 w-24 md:w-32">
+                    <i class="ph-fill ph-file-js text-4xl text-[#F7DF1E] mb-2"></i>
+                    <span class="font-medium text-sm">JavaScript</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 w-24 md:w-32">
+                    <i class="ph-fill ph-atom text-4xl text-[#61DAFB] mb-2"></i>
+                    <span class="font-medium text-sm">React</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 w-24 md:w-32">
+                    <i class="ph-fill ph-cube text-4xl text-[#339933] mb-2"></i>
+                    <span class="font-medium text-sm">Node.js</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 w-24 md:w-32">
+                    <i class="ph-fill ph-git-branch text-4xl text-[#F05032] mb-2"></i>
+                    <span class="font-medium text-sm">Git</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-dark-card rounded-2xl border border-slate-200 dark:border-dark-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 w-24 md:w-32">
+                    <i class="ph-fill ph-github-logo text-4xl text-slate-800 dark:text-white mb-2"></i>
+                    <span class="font-medium text-sm">GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN FAQ -->
+    <section id="faq" class="py-24 relative z-10 bg-white dark:bg-dark-bg">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Preguntas Frecuentes</h2>
+                <p class="text-slate-600 dark:text-dark-muted">Resolvemos tus dudas sobre aprender desarrollo web de forma gratuita.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-slate-200 dark:border-dark-border rounded-2xl overflow-hidden bg-white dark:bg-dark-card">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <span class="font-semibold text-lg">¿Los certificados son realmente gratis?</span>
+                        <i class="ph ph-caret-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-slate-600 dark:text-dark-muted border-t border-slate-100 dark:border-dark-border">
+                        <p>Sí, absolutamente. Plataformas como freeCodeCamp u OpenBootcamp emiten certificados digitales oficiales tras completar los proyectos finales sin cobrar nada. En casos como edX (CS50), el curso es gratis, pero el certificado verificado oficial de la plataforma puede tener costo, aunque ofrecen un certificado interno gratuito.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-slate-200 dark:border-dark-border rounded-2xl overflow-hidden bg-white dark:bg-dark-card">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <span class="font-semibold text-lg">¿Necesito experiencia previa?</span>
+                        <i class="ph ph-caret-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-slate-600 dark:text-dark-muted border-t border-slate-100 dark:border-dark-border">
+                        <p>No. La mayoría de estas plataformas están diseñadas para absolutos principiantes. Empiezan enseñando qué es un navegador y cómo funciona internet antes de pasar a escribir la primera línea de código en HTML.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-slate-200 dark:border-dark-border rounded-2xl overflow-hidden bg-white dark:bg-dark-card">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <span class="font-semibold text-lg">¿Puedo conseguir trabajo aprendiendo aquí?</span>
+                        <i class="ph ph-caret-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-slate-600 dark:text-dark-muted border-t border-slate-100 dark:border-dark-border">
+                        <p>Sí. Miles de desarrolladores en empresas como Google, Apple o startups locales aprendieron en estas plataformas. Lo más importante en programación es tu portafolio: los proyectos que construyes mientras haces estos cursos valen más que el certificado en sí mismo.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-slate-200 dark:border-dark-border rounded-2xl overflow-hidden bg-white dark:bg-dark-card">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <span class="font-semibold text-lg">¿Cuánto tiempo necesito para aprender?</span>
+                        <i class="ph ph-caret-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 text-slate-600 dark:text-dark-muted border-t border-slate-100 dark:border-dark-border">
+                        <p>Depende de tu dedicación. Para conseguir un nivel junior de Desarrollo Web Full Stack, dedicando unas 2-3 horas diarias, suele tomar entre 6 a 9 meses. Lo importante es la constancia, no la velocidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHATBOT DE ASISTENCIA AI -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 pointer-events-none">
+        
+        <!-- Chatbot Window -->
+        <div id="chat-window" class="pointer-events-auto hidden flex flex-col w-96 max-w-[calc(100vw-2rem)] h-[500px] bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 scale-95 opacity-0 transform origin-bottom-right">
+            <!-- Chat Header -->
+            <div class="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center animate-pulse">
+                        <i class="ph-fill ph-robot text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm">Mentor de Programación</div>
+                        <div class="flex items-center gap-1.5 text-xs text-blue-100">
+                            <span class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></span>
+                            AI en línea
+                        </div>
+                    </div>
+                </div>
+                <button onclick="toggleChatWindow()" class="p-1 rounded-lg hover:bg-white/10 text-white transition-colors" aria-label="Cerrar chat">
+                    <i class="ph ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-6 space-y-4 no-scrollbar bg-slate-50/50 dark:bg-dark-bg/30">
+                <!-- Welcome Message -->
+                <div class="flex gap-3 max-w-[85%]">
+                    <div class="w-8 h-8 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center shrink-0">
+                        <i class="ph-fill ph-robot text-lg"></i>
+                    </div>
+                    <div class="p-3.5 rounded-2xl rounded-tl-none bg-white dark:bg-dark-card text-sm text-slate-700 dark:text-slate-300 shadow-sm border border-slate-100 dark:border-dark-border">
+                        <p class="font-medium mb-1">¡Hola! Soy tu mentor AI. 👋</p>
+                        Estoy diseñado para ayudarte a elegir el mejor camino de aprendizaje. Pregúntame sobre tecnologías, certificados o qué plataforma te conviene según tus objetivos.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Sugggestions Prompts -->
+            <div class="px-6 py-2 border-t border-slate-100 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/20 flex gap-2 overflow-x-auto no-scrollbar scroll-smooth">
+                <button onclick="sendQuickMessage('¿Cuál plataforma recomiendas para empezar de cero?')" class="shrink-0 px-3 py-1.5 text-xs rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-dark-border dark:text-dark-muted transition-colors">
+                    🏁 Empezar de cero
+                </button>
+                <button onclick="sendQuickMessage('¿Cómo puedo certificarme gratis en React?')" class="shrink-0 px-3 py-1.5 text-xs rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-dark-border dark:text-dark-muted transition-colors">
+                    ⚛️ Aprender React
+                </button>
+                <button onclick="sendQuickMessage('¿Qué valor real tienen estos certificados frente a un reclutador?')" class="shrink-0 px-3 py-1.5 text-xs rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-dark-border dark:text-dark-muted transition-colors">
+                    💼 Validez de certificados
+                </button>
+            </div>
+
+            <!-- Chat Input Area -->
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="p-4 border-t border-slate-200 dark:border-dark-border flex gap-2 bg-white dark:bg-dark-card">
+                <input type="text" id="chat-input" placeholder="Escribe tu duda aquí..." class="flex-1 px-4 py-3 rounded-2xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:bg-dark-bg dark:border-dark-border dark:focus:ring-primary-900 dark:text-white text-sm outline-none transition-all" required autocomplete="off">
+                <button type="submit" class="px-4 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-2xl transition-colors flex items-center justify-center shadow-lg shadow-primary-500/20">
+                    <i class="ph ph-paper-plane-right text-lg"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Chat Trigger Floating Button -->
+        <button id="chat-trigger" onclick="toggleChatWindow()" class="pointer-events-auto p-4 rounded-full bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-xl hover:shadow-2xl transition-transform hover:scale-110 active:scale-95 flex items-center justify-center animate-pulse-slow relative" aria-label="Abrir asistente de dudas">
+            <span class="absolute top-0 right-0 flex h-3.5 w-3.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-blue-500 border-2 border-white dark:border-dark-bg"></span>
+            </span>
+            <i class="ph-fill ph-chats-teardrop text-2xl" id="chat-trigger-icon"></i>
+        </button>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-code text-primary-500 text-2xl"></i>
+                    <span class="font-bold text-lg text-white">CursosWeb<span class="text-primary-500">Gratis</span></span>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors" aria-label="Twitter">
+                        <i class="ph-fill ph-twitter-logo text-2xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors" aria-label="GitHub">
+                        <i class="ph-fill ph-github-logo text-2xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors" aria-label="LinkedIn">
+                        <i class="ph-fill ph-linkedin-logo text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+                <p>&copy; 2026 Cursos Web Gratis. Todos los derechos reservados.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Contacto</a>
+                    <a href="#" class="hover:text-white transition-colors">Recursos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante Volver arriba (reubicado a la izquierda del chat para evitar colisión) -->
+    <button id="scrollTopBtn" class="fixed bottom-6 right-24 p-3 bg-primary-600 text-white rounded-full shadow-lg shadow-primary-500/30 opacity-0 translate-y-10 transition-all duration-300 z-50 hover:bg-primary-700 focus:outline-none" aria-label="Volver arriba">
+        <i class="ph ph-arrow-up text-xl"></i>
+    </button>
+
+    <!-- INTERACTIVE PDF CERTIFICATE VIEWER MODAL -->
+    <div id="pdf-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/85 backdrop-blur-md transition-all duration-300 opacity-0">
+        <div class="bg-slate-900 rounded-3xl w-full max-w-4xl h-[85vh] shadow-2xl border border-slate-800 flex flex-col overflow-hidden transform scale-95 transition-transform duration-300">
+            
+            <!-- PDF Viewer Toolbar -->
+            <div class="flex items-center justify-between px-6 py-4 bg-slate-800/90 border-b border-slate-700/50 text-slate-200">
+                <div class="flex items-center gap-3">
+                    <i class="ph-fill ph-file-pdf text-2xl text-red-500 animate-pulse"></i>
+                    <div>
+                        <span id="pdf-filename" class="font-semibold text-sm block tracking-wide">certificado_verificable.pdf</span>
+                        <span class="text-xs text-slate-400">Vista previa del título oficial</span>
+                    </div>
+                </div>
+                <!-- Custom Name input inside PDF Toolbar -->
+                <div class="hidden sm:flex items-center gap-2 bg-slate-900/60 border border-slate-700/80 rounded-xl px-3 py-1.5">
+                    <span class="text-xs text-slate-400">Tu Nombre:</span>
+                    <input type="text" id="cert-user-name" value="John Doe" oninput="updateCertName()" class="bg-transparent text-white font-medium text-xs border-none outline-none focus:ring-0 p-0 w-32" placeholder="Escribe tu nombre">
+                </div>
+                <!-- Toolbar Controls -->
+                <div class="flex items-center gap-3">
+                    <button onclick="window.print()" class="p-2 hover:bg-slate-700 rounded-lg text-slate-300 transition-colors" title="Imprimir / Guardar">
+                        <i class="ph ph-printer text-xl"></i>
+                    </button>
+                    <button onclick="closePdfModal()" class="p-2 hover:bg-red-600 rounded-lg text-slate-300 hover:text-white transition-colors" aria-label="Cerrar visor">
+                        <i class="ph ph-x text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Custom Name input for mobile layout -->
+            <div class="sm:hidden px-4 py-3 bg-slate-800 border-b border-slate-700/50 flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold text-slate-400">Tu Nombre en el certificado:</span>
+                <input type="text" id="cert-user-name-mobile" value="John Doe" oninput="updateCertNameMobile()" class="bg-slate-900 text-white font-medium text-xs border border-slate-700 rounded-lg px-2.5 py-1 w-40 focus:ring-1 focus:ring-primary-500 outline-none" placeholder="Escribe tu nombre">
+            </div>
+
+            <!-- PDF Viewer Inner Panel Selector -->
+            <div class="bg-slate-800/40 px-6 py-2 border-b border-slate-800/50 flex gap-2 overflow-x-auto no-scrollbar">
+                <button id="tab-freecodecamp" onclick="switchCertificatePlatform('freecodecamp')" class="px-3.5 py-1.5 text-xs rounded-xl font-medium border transition-all shrink-0 bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600">
+                    freeCodeCamp
+                </button>
+                <button id="tab-theodinproject" onclick="switchCertificatePlatform('theodinproject')" class="px-3.5 py-1.5 text-xs rounded-xl font-medium border transition-all shrink-0 bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600">
+                    The Odin Project
+                </button>
+                <button id="tab-cs50" onclick="switchCertificatePlatform('cs50')" class="px-3.5 py-1.5 text-xs rounded-xl font-medium border transition-all shrink-0 bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600">
+                    CS50 Harvard
+                </button>
+                <button id="tab-sololearn" onclick="switchCertificatePlatform('sololearn')" class="px-3.5 py-1.5 text-xs rounded-xl font-medium border transition-all shrink-0 bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600">
+                    SoloLearn
+                </button>
+                <button id="tab-openbootcamp" onclick="switchCertificatePlatform('openbootcamp')" class="px-3.5 py-1.5 text-xs rounded-xl font-medium border transition-all shrink-0 bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600">
+                    OpenBootcamp
+                </button>
+            </div>
+
+            <!-- PDF Virtual Desktop Document Sheet -->
+            <div class="flex-1 bg-slate-950 p-6 md:p-8 overflow-y-auto flex items-center justify-center no-scrollbar relative">
+                
+                <!-- CERTIFICATE WRAPPER SHEET (Simulated PDF Page) -->
+                <div id="printable-certificate" class="bg-white text-slate-900 w-full max-w-[760px] aspect-[1.414/1] shadow-2xl relative p-8 md:p-12 overflow-hidden flex flex-col justify-between border-[12px] transition-all duration-300">
+                    
+                    <!-- Dynamic platform layouts generated internally by dynamic styles -->
+                    <div id="cert-layout-content" class="h-full flex flex-col justify-between text-center relative z-10">
+                        <!-- Content will be injected through switchCertificatePlatform dynamically -->
+                    </div>
+
+                    <!-- Subtle Security Background Watermark/Patterns -->
+                    <div class="absolute inset-0 opacity-[0.03] pointer-events-none select-none z-0 flex items-center justify-center">
+                        <i class="ph ph-shield-check text-[300px]"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- PDF Viewer Footer status -->
+            <div class="bg-slate-800/90 border-t border-slate-700/50 px-6 py-3 flex justify-between items-center text-xs text-slate-400">
+                <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span>Documento verificado digitalmente</span>
+                </div>
+                <div>Pág. 1 de 1</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para interactividad -->
+    <script>
+        // Lógica de Modo Oscuro
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Comprobar preferencia guardada o sistema
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Menú móvil
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                // En modo oscuro, intensificar el fondo en scroll
+                if(html.classList.contains('dark')) {
+                    navbar.style.background = 'rgba(15, 23, 42, 0.9)';
+                }
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.style.background = ''; // reset to class definition
+            }
+        });
+
+        // Acordeón FAQ
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                // Toggle current
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Buscador de tabla
+        const searchInput = document.getElementById('searchInput');
+        const platformRows = document.querySelectorAll('.platform-row');
+        const noResultsMsg = document.getElementById('noResultsMsg');
+
+        searchInput.addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            let visibleCount = 0;
+
+            platformRows.forEach(row => {
+                const name = row.querySelector('.platform-name').textContent.toLowerCase();
+                const techText = row.querySelector('.tech-tags').textContent.toLowerCase();
+                
+                if (name.includes(term) || techText.includes(term)) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResultsMsg.classList.remove('hidden');
+            } else {
+                noResultsMsg.classList.add('hidden');
+            }
+        });
+
+        // Animación de contadores al cargar
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            if (!obj) return;
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start) + (id === 'stat-techs' ? '+' : '');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Iniciar animaciones de números después de un pequeño retraso para coincidir con la animación de aparición
+        setTimeout(() => {
+            animateValue("stat-platforms", 0, 5, 1500);
+            animateValue("stat-techs", 0, 15, 2000);
+        }, 1000);
+
+        // Botón Volver arriba
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // LÓGICA DE BENEFICIOS DESPLEGABLES
+        document.querySelectorAll('.toggle-benefit-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.p-8');
+                const details = card.querySelector('.benefit-details');
+                const icon = btn.querySelector('i');
+                const span = btn.querySelector('span');
+                const isExpanded = details.style.maxHeight && details.style.maxHeight !== '0px';
+
+                if (isExpanded) {
+                    // Colapsar
+                    details.style.maxHeight = '0px';
+                    details.style.opacity = '0';
+                    details.style.marginTop = '0px';
+                    icon.classList.remove('rotate-180');
+                    span.textContent = 'Saber más';
+                } else {
+                    // Expandir
+                    // Medir altura real del contenido oculto
+                    details.style.maxHeight = 'none';
+                    const targetHeight = details.scrollHeight + 'px';
+                    details.style.maxHeight = '0px';
+                    
+                    // Pequeño timeout para forzar el reflow y aplicar la animación
+                    setTimeout(() => {
+                        details.style.maxHeight = targetHeight;
+                        details.style.opacity = '1';
+                        details.style.marginTop = '16px';
+                        icon.classList.add('rotate-180');
+                        span.textContent = 'Ver menos';
+                    }, 20);
+                }
+            });
+        });
+
+        // LÓGICA DEL CHATBOT CON LA API DE GEMINI
+        const chatWindow = document.getElementById('chat-window');
+        const chatInput = document.getElementById('chat-input');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatTriggerIcon = document.getElementById('chat-trigger-icon');
+
+        // Toggle chat window open / close
+        function toggleChatWindow() {
+            if (chatWindow.classList.contains('hidden')) {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                    chatTriggerIcon.classList.replace('ph-chats-teardrop', 'ph-caret-down');
+                }, 10);
+            } else {
+                chatWindow.classList.remove('scale-100', 'opacity-100');
+                chatWindow.classList.add('scale-95', 'opacity-0');
+                chatTriggerIcon.classList.replace('ph-caret-down', 'ph-chats-teardrop');
+                setTimeout(() => {
+                    chatWindow.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        // Helper to append message bubble to UI
+        function appendMessage(text, isUser = false) {
+            const wrapper = document.createElement('div');
+            wrapper.className = isUser ? 'flex justify-end gap-3 max-w-[85%] ml-auto' : 'flex gap-3 max-w-[85%]';
+            
+            let iconHtml = '';
+            if (!isUser) {
+                iconHtml = `
+                    <div class="w-8 h-8 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center shrink-0">
+                        <i class="ph-fill ph-robot text-lg"></i>
+                    </div>
+                `;
+            }
+
+            const bubbleHtml = `
+                <div class="p-3.5 rounded-2xl ${isUser ? 'rounded-tr-none bg-primary-600 text-white dark:bg-primary-500' : 'rounded-tl-none bg-white dark:bg-dark-card text-slate-700 dark:text-slate-300 border border-slate-100 dark:border-dark-border'} text-sm shadow-sm">
+                    ${text}
+                </div>
+            `;
+
+            wrapper.innerHTML = isUser ? bubbleHtml + iconHtml : iconHtml + bubbleHtml;
+            chatMessages.appendChild(wrapper);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Helper for showing a loading indicator
+        function showLoadingIndicator() {
+            const wrapper = document.createElement('div');
+            wrapper.id = 'chat-loading';
+            wrapper.className = 'flex gap-3 max-w-[85%]';
+            wrapper.innerHTML = `
+                <div class="w-8 h-8 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center shrink-0">
+                    <i class="ph-fill ph-robot text-lg"></i>
+                </div>
+                <div class="p-3.5 rounded-2xl rounded-tl-none bg-white dark:bg-dark-card text-slate-700 dark:text-slate-300 border border-slate-100 dark:border-dark-border text-sm shadow-sm flex items-center gap-1">
+                    <span class="w-2 h-2 bg-slate-400 dark:bg-slate-600 rounded-full animate-bounce"></span>
+                    <span class="w-2 h-2 bg-slate-400 dark:bg-slate-600 rounded-full animate-bounce delay-100"></span>
+                    <span class="w-2 h-2 bg-slate-400 dark:bg-slate-600 rounded-full animate-bounce delay-200"></span>
+                </div>
+            `;
+            chatMessages.appendChild(wrapper);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeLoadingIndicator() {
+            const indicator = document.getElementById('chat-loading');
+            if (indicator) indicator.remove();
+        }
+
+        // Send a suggestion chip message immediately
+        function sendQuickMessage(text) {
+            chatInput.value = text;
+            const event = new Event('submit', { cancelable: true });
+            document.getElementById('chat-form').dispatchEvent(event);
+        }
+
+        // Handle Form Submission / Gemini Call
+        async function handleChatSubmit(e) {
+            if (e) e.preventDefault();
+            const messageText = chatInput.value.trim();
+            if (!messageText) return;
+
+            // Append user text, empty inputs
+            appendMessage(messageText, true);
+            chatInput.value = '';
+
+            // Show writing state
+            showLoadingIndicator();
+
+            const systemPrompt = `Actúas como un mentor experto y empático de programación para la landing page 'Cursos Web Gratis con Certificado'.
+Tus objetivos principales son:
+1. Recomendar de manera neutral, útil y detallada las 5 plataformas listadas en el sitio: freeCodeCamp, The Odin Project, CS50 Harvard, SoloLearn y OpenBootcamp.
+2. Responder dudas sobre desarrollo web (frontend, backend, HTML, CSS, JavaScript, React, Node.js, Git/GitHub) en español de forma comprensible e inspiradora.
+3. Explicar claramente cómo obtener los certificados sin costo de cada plataforma.
+Mantén tus respuestas amigables, cortas (de preferencia de 2 a 3 párrafos como máximo) y bien estructuradas para que sean fáciles de leer en una pantalla móvil de chat. No inventes plataformas que no estén ligadas al ecosistema de desarrollo web gratuito.`;
+
+            const apiKey = ""; // Dejado vacío para que Canvas asigne el Key correspondiente en runtime.
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: messageText }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                }
+            };
+
+            // Implementación de llamada con reintentos mediante exponencial backoff
+            const fetchWithRetry = async (url, options, retries = 3, delay = 1000) => {
+                try {
+                    const res = await fetch(url, options);
+                    if (!res.ok) {
+                        if (res.status === 429 && retries > 0) {
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            return fetchWithRetry(url, options, retries - 1, delay * 2);
+                        }
+                        throw new Error(`HTTP Error Status: ${res.status}`);
+                    }
+                    return res;
+                } catch (error) {
+                    if (retries > 0) {
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        return fetchWithRetry(url, options, retries - 1, delay * 2);
+                    }
+                    throw error;
+                }
+            };
+
+            try {
+                const response = await fetchWithRetry(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                removeLoadingIndicator();
+
+                const candidate = result.candidates?.[0];
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const replyText = candidate.content.parts[0].text;
+                    // Reemplazo simple de marcas de formato markdown si fuera necesario
+                    const formattedText = replyText.replace(/\n/g, '<br>');
+                    appendMessage(formattedText, false);
+                } else {
+                    appendMessage("Lo lamento, no logré procesar tu mensaje en este momento. Inténtalo de nuevo más tarde.");
+                }
+            } catch (err) {
+                console.error("Gemini API Error:", err);
+                removeLoadingIndicator();
+                appendMessage("Ups, he experimentado un problema al conectarme al servidor AI. Por favor, revisa tu conexión.");
+            }
+        }
+
+        // PDF CERTIFICATE PREVIEWER SYSTEM
+        const pdfModal = document.getElementById('pdf-modal');
+        const pdfFilename = document.getElementById('pdf-filename');
+        const certUserNameInput = document.getElementById('cert-user-name');
+        const certUserNameMobileInput = document.getElementById('cert-user-name-mobile');
+        let currentPlatform = 'freecodecamp';
+        let studentName = 'Tú Nombre Aquí';
+
+        function updateCertName() {
+            studentName = certUserNameInput.value || 'Tú Nombre Aquí';
+            certUserNameMobileInput.value = studentName;
+            const element = document.getElementById('cert-display-name');
+            if(element) element.innerText = studentName;
+        }
+
+        function updateCertNameMobile() {
+            studentName = certUserNameMobileInput.value || 'Tú Nombre Aquí';
+            certUserNameInput.value = studentName;
+            const element = document.getElementById('cert-display-name');
+            if(element) element.innerText = studentName;
+        }
+
+        function openPdfModal(platform) {
+            currentPlatform = platform || 'freecodecamp';
+            pdfModal.classList.remove('hidden');
+            pdfModal.classList.add('flex');
+            
+            // Sync values initially
+            certUserNameInput.value = studentName;
+            certUserNameMobileInput.value = studentName;
+
+            setTimeout(() => {
+                pdfModal.classList.remove('opacity-0');
+                pdfModal.querySelector('.max-w-4xl').classList.remove('scale-95');
+                pdfModal.querySelector('.max-w-4xl').classList.add('scale-100');
+            }, 50);
+
+            switchCertificatePlatform(currentPlatform);
+        }
+
+        function closePdfModal() {
+            pdfModal.classList.add('opacity-0');
+            pdfModal.querySelector('.max-w-4xl').classList.replace('scale-100', 'scale-95');
+            setTimeout(() => {
+                pdfModal.classList.add('hidden');
+                pdfModal.classList.remove('flex');
+            }, 300);
+        }
+
+        // Switch styles dynamically inside the virtual canvas to look extremely high quality
+        function switchCertificatePlatform(platform) {
+            currentPlatform = platform;
+            const certSheet = document.getElementById('printable-certificate');
+            const layoutContainer = document.getElementById('cert-layout-content');
+            
+            // Clear prior active tab classes
+            const tabs = ['freecodecamp', 'theodinproject', 'cs50', 'sololearn', 'openbootcamp'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if (btn) {
+                    btn.className = "px-3.5 py-1.5 text-xs rounded-xl font-medium border transition-all shrink-0 bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600";
+                }
+            });
+
+            // Set current tab active
+            const activeBtn = document.getElementById(`tab-${platform}`);
+            if (activeBtn) {
+                activeBtn.className = "px-3.5 py-1.5 text-xs rounded-xl font-medium border transition-all shrink-0 bg-primary-600 border-primary-500 text-white shadow-md shadow-primary-500/10";
+            }
+
+            // PDF title rename
+            pdfFilename.innerText = `certificado_${platform}_verificable.pdf`;
+
+            // Apply brand specific style templates
+            if (platform === 'freecodecamp') {
+                certSheet.style.borderColor = '#0a0a23'; // FCC dark green-blue
+                layoutContainer.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs uppercase tracking-widest text-[#0a0a23] font-bold">freeCodeCamp.org</span>
+                        <div class="text-[9px] text-right text-slate-400">ID de Certificación: <br><strong class="text-slate-700 font-mono">FCC-9201-92</strong></div>
+                    </div>
+                    <div class="my-auto">
+                        <span class="text-xs font-mono uppercase tracking-[0.25em] text-slate-500 block mb-2">Certificado Oficial</span>
+                        <h2 class="text-2xl md:text-3xl font-serif text-[#0a0a23] font-normal italic tracking-wide">De haber completado el currículo de</h2>
+                        <h3 class="text-xl md:text-2xl font-bold font-mono tracking-tight text-slate-800 my-2">Desarrollo Web Responsive</h3>
+                        <p class="text-xs text-slate-500 max-w-md mx-auto my-3 font-mono">Este título avala la exitosa entrega y aprobación de los 5 proyectos obligatorios con un total de 300 horas de práctica de código.</p>
+                        <p class="text-sm font-semibold tracking-wider text-slate-500 font-mono">Otorgado oficialmente a:</p>
+                        <h1 id="cert-display-name" class="text-3xl md:text-4xl font-serif text-[#0a0a23] underline decoration-slate-300 underline-offset-8 mt-1 py-1 font-semibold">${studentName}</h1>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-slate-200 pt-4">
+                        <div class="text-left">
+                            <span class="block text-xs font-serif font-semibold text-slate-800">Quincy Larson</span>
+                            <span class="block text-[10px] text-slate-400 font-mono">Fundador, freeCodeCamp</span>
+                        </div>
+                        <div class="w-12 h-12 flex items-center justify-center bg-slate-100 rounded border border-slate-200">
+                            <i class="ph ph-qr-code text-3xl text-slate-700"></i>
+                        </div>
+                    </div>
+                `;
+            } else if (platform === 'theodinproject') {
+                certSheet.style.borderColor = '#cc9c00'; // TOP Gold
+                layoutContainer.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs uppercase tracking-widest text-[#cc9c00] font-bold">The Odin Project</span>
+                        <div class="text-[9px] text-right text-slate-400 font-mono">Código de verificación: <br><strong class="text-slate-700 font-bold">TOP-JS-FULLSTACK</strong></div>
+                    </div>
+                    <div class="my-auto">
+                        <div class="inline-block bg-slate-50 border border-[#cc9c00]/30 text-[#cc9c00] text-[10px] font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">Desarrollador Full Stack</div>
+                        <h2 class="text-3xl font-bold tracking-tight text-slate-800">Certificado de Finalización</h2>
+                        <p class="text-xs text-slate-500 max-w-md mx-auto mt-2 leading-relaxed">Por la culminación con excelencia técnica del plan integral de estudios avanzado de desarrollo de aplicaciones web complejas, base de datos y diseño adaptativo.</p>
+                        <div class="my-4">
+                            <span class="text-[11px] uppercase tracking-wider text-slate-400 block mb-1">Reconocimiento extendido a:</span>
+                            <h1 id="cert-display-name" class="text-3xl md:text-4xl font-sans font-black tracking-tight text-slate-900">${studentName}</h1>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-slate-100 pt-4">
+                        <div class="text-left">
+                            <span class="block text-[10px] uppercase text-slate-400 tracking-wider">Validado por</span>
+                            <span class="block text-xs font-bold text-slate-700">Comunidad Global Odin</span>
+                        </div>
+                        <i class="ph ph-sword text-3xl text-[#cc9c00]"></i>
+                    </div>
+                `;
+            } else if (platform === 'cs50') {
+                certSheet.style.borderColor = '#a41034'; // Crimson Harvard
+                layoutContainer.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs uppercase font-serif tracking-widest text-[#a41034] font-bold">HARVARD UNIVERSITY</span>
+                        <span class="text-[10px] font-serif text-slate-400">CS50 CERTIFICATES</span>
+                    </div>
+                    <div class="my-auto">
+                        <h2 class="text-3xl font-serif text-slate-800 font-normal">HarvardX Professional Certificate</h2>
+                        <p class="text-xs font-serif text-slate-500 italic mt-1">Este es un documento oficial con validez académica curricular en ciencias de la computación</p>
+                        <div class="my-5 border-y border-slate-100 py-3">
+                            <h1 id="cert-display-name" class="text-4xl font-serif tracking-wide text-[#a41034] font-semibold my-1">${studentName}</h1>
+                            <p class="text-xs text-slate-500 max-w-md mx-auto mt-2">Ha cumplido satisfactoriamente con los rigurosos estándares académicos y prácticos exigidos para el curso formal de</p>
+                            <h3 class="text-lg md:text-xl font-bold text-slate-800 font-serif mt-1">CS50: Introduction to Computer Science</h3>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div class="text-left font-serif">
+                            <span class="block text-xs italic text-slate-600">David J. Malan</span>
+                            <span class="block text-[9px] text-slate-400">Gordon McKay Professor of the Practice of Computer Science</span>
+                        </div>
+                        <div class="w-12 h-12 flex items-center justify-center bg-red-50 rounded-full border border-red-200">
+                            <i class="ph-fill ph-certificate text-2xl text-[#a41034]"></i>
+                        </div>
+                    </div>
+                `;
+            } else if (platform === 'sololearn') {
+                certSheet.style.borderColor = '#4a90e2'; // SoloLearn Blue
+                layoutContainer.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-bold tracking-tight text-[#4a90e2]">SoloLearn</span>
+                        <div class="text-[9px] text-right text-slate-400">ID de verificación: <br><strong class="text-slate-700 font-bold">SL-908A-3</strong></div>
+                    </div>
+                    <div class="my-auto text-center">
+                        <i class="ph ph-crown text-3xl text-yellow-500 mb-2"></i>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-800">Certificado de Logro</h2>
+                        <p class="text-xs text-slate-500 max-w-sm mx-auto my-2">Por demostrar un dominio óptimo en los módulos formativos interactivos de desarrollo y algoritmia del programa:</p>
+                        <h3 class="text-lg font-bold text-[#4a90e2] uppercase tracking-wide my-1">HTML, CSS & JavaScript Essentials</h3>
+                        <p class="text-xs text-slate-400 mt-3">Reconocimiento otorgado a:</p>
+                        <h1 id="cert-display-name" class="text-3xl font-bold tracking-tight text-slate-900 mt-1">${studentName}</h1>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-slate-100 pt-4">
+                        <div class="text-left text-[10px] text-slate-400">
+                            <span>Fecha de Emisión: 2026</span>
+                        </div>
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-xl">
+                            <i class="ph ph-medal text-2xl text-[#4a90e2]"></i>
+                        </div>
+                    </div>
+                `;
+            } else if (platform === 'openbootcamp') {
+                certSheet.style.borderColor = '#3b82f6'; // OpenBootcamp Blue/Slate
+                layoutContainer.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-black tracking-wider text-slate-800 uppercase">OpenBootcamp</span>
+                        <span class="text-[9px] font-mono text-slate-400">OB-VERIFIED-9831</span>
+                    </div>
+                    <div class="my-auto">
+                        <h2 class="text-2xl font-black text-slate-900 uppercase tracking-tight">Diploma de Bootcamp</h2>
+                        <p class="text-xs text-slate-500 max-w-md mx-auto my-2">Habiendo completado exitosamente las pruebas presenciales y proyectos del trayecto académico Full Stack en la plataforma de aceleración laboral.</p>
+                        <div class="my-4">
+                            <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Graduado del Programa:</span>
+                            <h1 id="cert-display-name" class="text-3xl font-mono font-bold text-slate-900 bg-slate-100 py-1 border border-slate-200 rounded-lg max-w-sm mx-auto">${studentName}</h1>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-700 tracking-wide uppercase">Full Stack Developer Especialidad React</h3>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-slate-100 pt-4">
+                        <div class="text-left text-[10px] text-slate-400">
+                            <span>Evaluación Final: Aprobado</span>
+                        </div>
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-xl">
+                            <i class="ph ph-rocket text-2xl text-[#3b82f6]"></i>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
