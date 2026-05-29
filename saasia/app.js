@@ -1,112 +1,107 @@
-// lo siguiente, 9 lineas,  lo comento para continuar
-//1.nuestra base de datos mock
-//es un array de objetos[rol, texto]
-// let historialChat = [
-//     {rol: "ia", texto: "¡Hola! Soy IA Master. ¿En que te ayudo?"},
-//     {rol: "usuario", texto: "Quiero aprender JavaScript"},
-//     {rol: "ia", texto: "¡Excelente eleccion! Empezaremos por los Arrays."},
-
-// ];
-
-//*nuestra base de datos ahora con memoria */
 let historialChat = [];
-let titulosRecientes = [];  //array de los titulo{s del menu lateral negro
+let titulosRecientes = []; // Array de los titulos del menu lateral negro
 
-//funcion de arranque: busca en el disco duro del navegador nada mas al abrir la web
+// FUNCIÓN DE ARRANQUE: Busca en el disco duro del navegador nada mas al abrir la web
 function cargarMemoria() {
     let memoriaChat = localStorage.getItem('chatGuardado');
     let memoriaTitulos = localStorage.getItem('titulosGuardados');
 
-    //si el navegador tiene datos guardados, lo transformamos de texto a array
+    //Si el navegador tiene datos guardados, lo transformamos de texto a array
 
     if(memoriaChat){
         historialChat = JSON.parse(memoriaChat);
-    }else{
-        //si el usuario entra por primera vez, le dejamos solo el saludo inicial
+    } else {
+        // Si el usuario entra por primera vez, le dejamos solo el saludo inicial
         historialChat = [{
-            rol: "ia",texto:"¡Hola! Soy IA Master. ¿En que te ayudo hoy?"}
-        ];
-   }
-
-    if(memoriaTitulos){
-        titulosRecientes  = JSON.parse(memoriaTitulos);
+             rol: "ia", texto: "¡Hola! Soy IA Master. ¿En qué te ayudo hoy?"}
+            ];
     }
-    //dibujamos la pantalla con lo que hemos rescatado en la memoria
+
+    if (memoriaTitulos){
+        titulosRecientes = JSON.parse(memoriaTitulos);
+    }
+    //Dibujamos la pantalla con lo que hemos rescatado en la memoria
     pintarChat(historialChat);
     actualizarHistorialLateral();
 }
 
-//ejecutamos la funcion automaticamente al cargar el script
+//Ejecutamos la función automáticamwnte al cargar el script
 cargarMemoria();
 
-
-//2.La funcion pintura(visual)
-//Esta funcion recibe una lista (nuestro array) y lo dibuja en la pantalla
-function pintarChat(listaMensajes){
-    //paso 1 = buscamos en el html la etiquet donde vamos a meter los mensajes
-    let caja = document.getElementById('caja-mensajes');
-    //paso 2 = borramos la pizarra.
-    //si no hacemos esto, cada vez que enviemos un mensaje nuevo,
-    //se volvera a pintar todo el historial antiguo
-    caja.innerHTML = "";
-    //paso 3 = el trabajador virtual (el bucle for)
-    //mantenemos el bucle for que aprendimos ayer
-    //le decimos que de tantas vueltas como mensajes haya en la lista
-    //(listaMensajes.legth)
-    for(let i = 0; i < listaMensajes.length;i++){
-        //paso 4: el condicional ternario(es un "if" resumido en una linea)
-        //le preguntamos: ¿el rol de este mensaje es "usuario"?
-        //si es true (usuario) - usamos la clase verde ("msg-usuario")
-        //si es false(:) - usamos la clase gris("msg-ia")
-        let claseCSS = listaMensajes[i].rol === "usuario" ? "msg-usuario" : "msg-ia";
-        //paso 5: inyectar el html (usando comillas invertidas ``)
-        //las ocmillas invertidas nos permiten meter variables de JS dentro del html
-        //usando el simbolo de dolar y las llaves ${....}
-        //caja.innerHTML += significa "añade este bloque al final de lo que haya"
-        caja.innerHTML += 
-                            `<div class = "${claseCSS}">
-                             <b>${listaMensajes[i].rol.toUpperCase()}:</b><br>
-                             ${listaMensajes[i].texto}</div>
-                            `;
-    }
-    //paso 6: el auto-scroll (el truco de whatsapp)
-    //le decimos a la caja que baje su barra de desplazamiento hasta el fondo
-    //para que siempre veamos el ultimo mensaje enviado
-    caja.scrollTop = caja.scrollHeight;
-}  
-
-// pintarChat(historialChat);      
-// function enviarPrompt(event){
-//     //evitamos que el form recargue la pagina
-//     event.preventDefault();
-//     //atrapamos la cajita de texto donde el usuario escribe
-//     let input = document.getElementById('mensaje-input');
-
-//     //1. capturar el texto
-//     //sacamos el texto que ha esacrito el y le quitamos los espacio en blanoc
-//     //con .trim()
-//     let mensaje = input.value.trim();
-
-//     //2. condicional
-
-//     if (mensaje === ""){
-//         alert("⚠️¡Error! Escribe algo primero");
-//         //el return expulsa a JS de la funcion para que no siga leyendo
-//         return;
+//2. LA FUNCION PINTORA (Visual)
+// Esta función recibe una lista (nuestro array) y lo dibuja en la pantalla
+// function pintarChat(listaMensajes){
+//     // PASO 1 = Buscamos en el HTML la etiqueta donde vamos a meter los mensajes
+//     let caja = document.getElementById('caja-mensajes');
+//     // PASO 2 = Borramos la pizarra.
+//     // Si no hacemos esto, cada vez que enviemos un mensajes nuevo,
+//     // se volverá a pintar todo el historial antiguo
+//     caja.innerHTML = "";
+//     // PASO 3: EL TRABAJADOR VIRTUAL (El bucle FOR)
+//     // MATENEMOS EL BUCLE FOR QUE APRENDIMOS AYER
+//     // Le decimos que dé tantas vueltas como mensajes haya en la lista.
+//     // (listaMensajes.length)
+//     for(let i = 0; i < listaMensajes.length;i++){
+//         // PASO 4 : EL CONDICIONAL TERNARIO (Un "IF" resumido en una linea)
+//         // Le preguntamos: ¿El rol de este mensaje es "usuario"?
+//         // Si es true(?) -> usamos la clase verde("msg-usuario")
+//         // Si es false(:) -> usaos la clase gris ("msg-ia")
+//         let claseCSS = listaMensajes[i].rol === "usuario" ? "msg-usuario" : "msg-ia";
+//         // PASO 5 : INYECTAR EL HTML (Usando comillas invertidas ``)
+//         // Las comillas invertidas nos permiten meter variables de JS dentro del HTML
+//         // usando el símbolo de dólar y las llaves ${...}.
+//         // caja.innerHTML += significa "añade este bloque al final de lo que haya"
+//         caja.innerHTML +=
+//                              `<div class = "${claseCSS}">
+//                              <b>${listaMensajes[i].rol.toUpperCase()}:</b><br>
+//                              ${listaMensajes[i].texto}</div>
+//                              `;
 //     }
-//     //guardamos el mensaje real del usuario
-//     let nuevoMensaje = {rol:"usuario", texto:mensaje};
-//     historialChat.push(nuevoMensaje);  //lo metemos al final del Array
-//    //b) el truco: simulamos que la IA nos responde al instante creando otro objeto
-//    let respuestaIA = {rol: "ia", texto: "Estoy procesando tu mensaje: '" + mensaje + "'"};
-//    historialChat.push(respuestaIA);
-
-//    // c) como el array ha cambiado (tiene dos mensajes mas), obligamos a la web repintarse
-//    pintarChat(historialChat);
-//    //d ) limpiamos el texto que quedo escrito en el inmput
-//    input.value = "";
-//    input.focus();
+//     // PASO 6 : EL AUTO-SCROLL (El truco de Whatsapp)
+//     // Le decimos a la caja que baje su barra de desplazamiento hasta el fondo
+//     // Para que siempre veamos el último mensaje enviado
+//     caja.scrollTop = caja.scrollHeight;
 // }
+
+// 2. LA FUNCIÓN PINTORA (Ahora 100% Segura contra Hackers)
+function pintarChat(listaMensajes){
+    let caja = document.getElementById('caja-mensajes');
+    //ESTO SI ES SEGURO : Vaciar la caja usando innerHTML == "" no supone riesgo
+    // porque no le estamos inyectando texto del usuario, solo la estamos limpiando
+    caja.innerHTML = "";
+    
+    //Recorremos la lista de mensajes
+    for(let i = 0; i < listaMensajes.length; i++){
+        
+        //1. Creamos la caja principal del mensaje (el <div>) de forma segura
+        let divMensaje = document.createElement('div');
+        divMensaje.className = listaMensajes[i].rol === "usuario" ? "msg-usuario" : "msg-ia";
+        
+        //2. Creamos la etiqueta de negreta para el nombre
+        let textoRol = document.createElement('b');
+        textoRol.textContent = listaMensajes[i].rol.toUpperCase() + ":";
+
+        //3. Creamos el salto de línea
+        let saltoLinea = document.createElement('br');
+
+        //4. EL ESCUDO DEFENSIVO: Creamos un <span> para el texto real.
+        let textoContenido = document.createElement('span');
+        // Al usar .textContent, JS transforma cualquier codigo malicioso
+        // como un <script> in texto inofensivo. Lo "desactiva".
+        textoContenido.textContent = " " + listaMensajes[i].texto;
+
+        //5. Ensamblamos las piezas: Metemos el rol, el salto y el texto dentro del div
+        divMensaje.appendChild(textoRol);
+        divMensaje.appendChild(saltoLinea);
+        divMensaje.appendChild(textoContenido);
+
+        //6. Inyectamos el div ya terminado y seguro en la pantalla principal
+        caja.appendChild(divMensaje);
+    }
+    // El auto-scroll
+    caja.scrollTop = caja.scrollHeight;
+}
+
 
 function enviarPrompt(event){
     event.preventDefault();
@@ -115,134 +110,151 @@ function enviarPrompt(event){
     let mensaje = input.value.trim();
 
     if (mensaje === ""){
-        alert("¡Error¡ Escribe algo primero");
+        alert("⚠️ ¡Error! Escribe algo primero");
         return;
     }
 
-    //A) Guardamos el mensaje real del usuario en el historial
+    // A) Guardamos el mensaje real del usuario en el historial
     historialChat.push({rol: "usuario", texto: mensaje});
+    //B) Metemos el mensaje en el historial del menú lateral (MAX 5)
     titulosRecientes.push(mensaje);
-    //B) metemos el mensaje en el historial del menu lateral (max 5)
-    if(titulosRecientes.length > 5){
-        titulosRecientes.shift(); // borra el mas antiguo de la final para no saturar
+    if (titulosRecientes.length > 5) {
+        titulosRecientes.shift(); // Borra el más antiguo de la final para no saturar
     }
     actualizarHistorialLateral();
-    //c)  pintamos el mensaje del usuario y guardamos ambos arrays en el text plano
+    //C) Pintamos el mensaje del usuario y guardamos ambos arrays en el texto plano    
     pintarChat(historialChat);
-    //stringfy convierto un objeto o array a texto
-    localStorage.setItem('chatGuardado',JSON.stringify(historialChat));
-    localStorage.setItem('titulosGuardados',JSON.stringify(titulosRecientes));
+    //stringfy convierto un objeto o array a texto.
+    localStorage.setItem('chatGuardado', JSON.stringify(historialChat));
+    localStorage.setItem('titulosGuardados', JSON.stringify(titulosRecientes));
 
     input.value = "";
     input.focus();
 
-    //d) el efecto "IA pensando...."
+//     // //D) El EFECTO "IA PENSANDO..."
+//     // let caja = document.getElementById('caja-mensajes');
+//     // caja.innerHTML += `
+//     //     <div class="msg-ia" id="mensaje-pensando">
+//     //         <b>IA MASTER:</b><br>✍️ Pensando...
+//     //     </div>
+//     // `;
+
+//     // caja.scrollTop = caja.scrollHeight; // Bajamos el scroll para ver el pensando
+    
+//     // // E) Retrasamos la respuesta real de la IA 1.5 segundos (1500ms)
+//     // setTimeout(() => {
+//     //     //1. Elimanos de la pantalla el indicador "Pensnando..."
+//     //     document.getElementById('mensaje-pensando').remove();
+//     //     //2. Metemos la respuesta definitiva en el  Array
+//     //     historialChat.push({rol: "ia", texto: "Estoy procesando tu mensaje: '" + mensaje + "'" });
+//     //3. Volemos a pintar el chat completo y actualizamos la memoria del disco duro  
+// //         pintarChat(historialChat);
+// //         localStorage.setItem('chatGuardado', JSON.stringify(historialChat));
+// //     }, 1500);
+// // }
+
+// D) EFECTO "IA PENSANDO"
     let caja = document.getElementById('caja-mensajes');
+    // Como esto lo escribimos nosotros(no el usuario), usar innerHTML no es peligroso
     caja.innerHTML += `
         <div class="msg-ia" id="mensaje-pensando">
-            <b>IA MASTER:</b><br>✍️ Pensando...
-        </div> 
-         `;
-         caja.scrollTop = caja.scrollHeight; //bajamos el scroll para ver el pensando
+        <b>IA MASTER:</b><br> ⌛ Buscando en internet...
+        </div>
+    `;
+    caja.scrollTop = caja.scrollHeight; // Bajamos el escrol para el el pensando ...
 
-         //e)retrasamos la respuesta real de la IAS 1.5 segundos(1500ms)
-         setTimeout(() => {
-            //1. eliminamos de la pantallad el indicador "Pensando...."
-            document.getElementById('mensaje-pensando').remove();
-            //2.metemos la respuesta definitiva en el array
-           historialChat.push({rol: "ia", texto: "Estoy procesando tu mensaje: '" + mensaje +"'"});
-            //3.volvemosd a pintar el chat completo y actualizamos la memoria del disco duro del navegador
-            pintarChat(historialChat);
-            localStorage.setItem('chatGuardado',JSON.stringify(historialChat));
+    //E) LA IA SE CONECTA A INTERNET (FETCH API)
+    // LE ponemos 'async' al seTimeOut para poder usar el 'await' dentro
+
+    setTimeout(async () =>{
+        //1. Eliminamos de la pantalla el indicador de Pesando ...
+        document.getElementById('mensaje-pensando').remove();
+        try {
+            //2. Hacemos la petición a la API de gatos (Nuestro cerebro temporal)
+            const respuestaExterna = await fetch("https://catfact.ninja/fact");
+            //si la API falla, lanzamos un error que nos enviará al catch
+            if(!respuestaExterna.ok) throw new Error ("Fallo en el servidor de la IA");
+            //3. Traducir el JSON
+            const datosApi = await respuestaExterna.json();
+            //4. Metemos la respuesta real (dato del gato) en el historial
+            historialChat.push({rol: "ia", texto: "Datos curiso: " + datosApi.fact});
+        } catch (error){
+            //Plan B: Si no hay internet o la API cae
+            historialChat.push({rol:"ia", texto: "Ups, mis servidores están caídos" + error.message});
+        }
+        //5. Volvemos a pitnar el chat completo
+        pintarChat(historialChat);
+        localStorage.setItem('chatGuardado', JSON.stringify(historialChat));
         }, 1500);
+    }
+
+//MINI RETO 1 : Ver TODO
+function mostrarTodo() {
+    pintarChat(historialChat);
 }
-
-
-
-
-
-
-
-//mini reto 1:  ver todo
-function mostrarTodo(){
-    pintarChat(historialChat);  
-}
-//mini reto 2-boton filtrar, el portero (Filter)
+// MINI RETO 2 :El portero (Filter) Mis mensajes
 function verMisMensajes() {
-    //revisa todo el historial . A cada mensaje lo llama "msj"
-    //devuelve una lista nueva SOLO ocn los dque cumplan la regla
+    // Revisa todo el historial. Acada mensaje lo llama "msj"
+    // Devuelve una lista nueva SOLO con los que cumplan la regla
     // (rol === "usuario")
     let soloUsuario = historialChat.filter(msj => msj.rol === "usuario");
-    //le pasamos esa lista cortita a nuestra funcion pintora
+    //Le pasamos esa lista cortita a nuesta función pintora
     pintarChat(soloUsuario);
- 
 }
 
-function modoGritar(){
+function modoGritar() {
 
-    //entra a todo el historial . Por cada mensaje ("msj") , construye un objeto nuevo
-    let chatGritando = historialChat.map(msj => {
-        return{
+    // Entra a todo el historial. Por cada mensaje ("msj"), construye un objeto nuevo.
+    let chatGritando = historialChat.map(msj =>{
+        return {
             rol: msj.rol,
-            //aqui esta la transformacion: convertimos el texto original a mayusculas
+            // Aquí está la transformación: convertimos el texto original a MAYÚSCULAS
             texto: msj.texto.toUpperCase()
         };
     });
-    //le pasamos esa lista transformada a nuestra funcion pintora
+    // Le pasamos esa lista transformada a nuestra función pintura
     pintarChat(chatGritando);
 }
 
-/////////////////
-// function borrarChat(){
+// Reto 1 : Boton Borrar
 
-//      historialChat.length = 0;
-// };
-// 
-
-
-//reto 1. boton borrar
-
-function borrarChat(){
-    // //1. Vaciamos la memoria (array vacio)
+function borrarChat() {
+    // //1. Vaciamos la memoria (Array vacío)
     // historialChat = [];
-    // //2.pintamos en el html
+    // //2. Pintamos en el html
     // pintarChat(historialChat);
     historialChat = [];
     titulosRecientes = [];
-    //eliminamos por completo las llaves del disco duro
+    // Eliminamos por completo las llaves del disco duro
     localStorage.removeItem('chatGuardado');
-    localStorage.removeItem('titulosGuardados');
-    //volvemos a pintar todo (ahora quedara todo limpio)
+    localStorage.removeItem('tituloGuardados');
+    // Volvemos a pintar todo (Ahora quedara todo limpio)
     pintarChat(historialChat);
     actualizarHistorialLateral();
 }
 
-
-
-//reto 2. buscador inteligente(filter+includes)
-function buscarMensaje(){
-    //1. atrapamos lo que el usuario ha escrito en la cajita del buscador
-    //usamos .toLowerCase() para pasarlo a minusculas y evitar problemas
-    //  de mayusculas/minuscular
+// Reto 2 : Buscador inteligente (Filter + Includes)
+function buscarMensaje() {
+    //1. Atrapamos lo que el usuario ha escrito en la cajita del buscador
+    // Usamos .toLowerCase() para pasarlo a minúsculas y evitar problemas de mayúsculas/minúsculas
     let palabraBuscada = document.getElementById('input-buscador').value.toLowerCase();
-    //2. usamos el portero (filter)  para revisar el historial
+    //2. Usamos el portero (Filter) para revisar el historial
     let resultados = historialChat.filter(msj => {
-        //pasamos el texto original del mensaje a minusculas y le preguntaremos:
-        //"¿Este texto .include() (incluye) la palabra buscadas?"
+        //Pasamos el texto original del mensaje a minúsculas y le preguntaremos:
+        // "¿Este texto .includes() (incluye) la palabra buscadas?"
         return msj.texto.toLowerCase().includes(palabraBuscada);
     });
-    //3.pintamos la pantalla solo los resultados encontrados
+    //3. Pintamos la pantalla SOLO los resultados encontrados
     pintarChat(resultados);
 }
 
-//actualizar menu lateral dinamico
+// ACTUALIZAR MENI LATERAL DINAMICO
 function actualizarHistorialLateral (){
-    //busca el <ul> que esta dentro de la clase .historial
-
+    // Busca el <ul> que esta dentro de la clase .historial
     let ulHistorial = document.querySelector('.historial ul');
-    ulHistorial.innerHTML = "";
+    ulHistorial.innerHTML = ""; // Limpia los textos fijos
 
-    //recorremos los titulos guardados y los inyectamos como elementod de la lista
+    // Recorremos los títulos guardados y los inyectamos como elementos de la lista
     titulosRecientes.forEach(titulo => {
         let textoCorto = titulo.length > 15 ? titulo.substring(0,15) + "..." : titulo;
         ulHistorial.innerHTML += `<li>${textoCorto}</li>`;
